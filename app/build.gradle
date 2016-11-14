@@ -21,6 +21,9 @@ android {
                 JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
         ]
     }
+    dataBinding {
+        enabled = true
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -54,6 +57,7 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
     compile 'com.facebook.fresco:fresco:0.12.0'
     compile 'com.mcxiaoke.viewpagerindicator:library:2.4.1'
+    compile 'com.kelin.mvvmlight:library:1.0.0'
     compile 'cn.jiguang:jpush:2.1.8'  // 极光推送
     testCompile 'junit:junit:4.12'
 }
