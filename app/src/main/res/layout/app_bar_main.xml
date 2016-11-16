@@ -17,14 +17,14 @@
         tools:context="com.kelin.mvvmlight.zhihu.MainActivity">
 
         <android.support.design.widget.AppBarLayout
-            android:id="@+id/appBarLayout"
+            android:id="@+id/abl_appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="256dp"
             android:fitsSystemWindows="true"
             android:theme="@style/AppTheme.AppBarOverlay">
 
             <android.support.design.widget.CollapsingToolbarLayout
-                android:id="@+id/collapsing_toolbar"
+                android:id="@+id/ctl_collapsingToolbarLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
@@ -53,7 +53,7 @@
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
                 <android.support.v4.view.ViewPager
-                    android:id="@+id/viewpager"
+                    android:id="@+id/vp_toolBarViewPager"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fitsSystemWindows="true"

@@ -28,7 +28,6 @@ public class MainActivity extends RxAppCompatActivity implements NavigationView.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         ViewDataBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setVariable(com.gebilaowang.example.future.BR.viewModel, new MainViewModel(this));
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.ctl_collapsingToolbarLayout);
