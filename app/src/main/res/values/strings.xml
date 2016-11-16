@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Future</string>
+    <string name="app_name">死兔子</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">设置</string>
+    <string name="today_news">今日日报</string>
 </resources>
