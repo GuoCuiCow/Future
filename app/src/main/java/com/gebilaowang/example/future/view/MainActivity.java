@@ -22,7 +22,6 @@ import com.kelin.mvvmlight.messenger.Messenger;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import com.viewpagerindicator.CirclePageIndicator;
 
-import static android.databinding.tool.util.GenerationalClassUtil.ExtensionFilter.BR;
 
 public class MainActivity extends RxAppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 

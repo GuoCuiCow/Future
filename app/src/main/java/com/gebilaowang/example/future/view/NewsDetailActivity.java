@@ -1,11 +1,19 @@
 package com.gebilaowang.example.future.view;
 
+import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.gebilaowang.example.future.R;
+import com.gebilaowang.example.future.viewmodel.NewsDetailViewModel;
+import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
-public class NewsDetailActivity extends AppCompatActivity {
+public class NewsDetailActivity extends RxAppCompatActivity {
     public static final String EXTRA_KEY_NEWS_ID = "key_news_id";
 
     @Override
@@ -13,5 +21,27 @@ public class NewsDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_detail);
         long id = getIntent().getLongExtra(EXTRA_KEY_NEWS_ID, -1);
+        ViewDataBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_news_detail);
+        binding.setVariable(com.gebilaowang.example.future.BR.viewModel, new NewsDetailViewModel(this, id));
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.ExpandedText);
+        collapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.CollapsedTitleText);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        WebView webView = (WebView) findViewById(R.id.webview);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient());
+
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
